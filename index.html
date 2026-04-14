@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Fábrica | Manizales</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        .font-brand { font-family: 'Bebas Neue', cursive; }
+        .font-body { font-family: 'Montserrat', sans-serif; }
+        .bg-industrial {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), 
+                        url('https://images.unsplash.com/photo-1550950158-d0d960dff51b?auto=format&fit=crop&q=80&w=1600');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-[#0f0f0f] text-white font-body">
+
+    <nav class="fixed w-full z-50 px-6 py-4 flex justify-between items-center bg-black/20 backdrop-blur-sm">
+        <div class="flex items-center gap-2">
+            <div class="w-10 h-10 bg-[#e31e24] rounded-full flex items-center justify-center border-2 border-white/20">
+                <i class="fas fa-fire-alt text-white"></i>
+            </div>
+            <span class="font-brand text-2xl tracking-widest">LA FÁBRICA</span>
+        </div>
+        <div class="hidden md:flex gap-8 text-sm font-bold tracking-tighter uppercase">
+            <a href="index.html" class="text-[#e31e24]">Inicio</a>
+            <a href="menu.html" class="hover:text-[#e31e24] transition-colors">Menú</a>
+            <a href="#" class="hover:text-[#e31e24] transition-colors">Ubicación</a>
+        </div>
+        <button class="bg-white text-black px-5 py-2 rounded-full font-bold text-xs uppercase hover:bg-[#e31e24] hover:text-white transition-all">
+            Pide Ahora
+        </button>
+    </nav>
+
+    <main class="relative h-screen flex items-center justify-center bg-industrial overflow-hidden">
+        
+        <div class="absolute top-20 left-10 opacity-10 animate-pulse">
+            <i class="fas fa-utensils text-[10rem]"></i>
+        </div>
+        <div class="absolute bottom-10 right-10 opacity-10">
+            <i class="fas fa-hamburger text-[15rem]"></i>
+        </div>
+
+        <div class="relative z-10 text-center px-4 max-w-4xl">
+            <span class="inline-block bg-[#e31e24] text-white px-4 py-1 rounded-sm font-bold text-sm tracking-[0.3em] mb-6 animate-bounce">
+                MANIZALES
+            </span>
+
+            <h1 class="font-brand text-7xl md:text-[10rem] leading-none mb-4 drop-shadow-2xl">
+                100% <span class="text-[#e31e24]">ARTESANAL</span>
+            </h1>
+
+            <p class="text-gray-300 text-lg md:text-2xl font-light max-w-2xl mx-auto mb-10 leading-relaxed italic">
+                "Cocinamos para tus eventos. Hamburguesas, conos de patacón, arepas y mucho más en la Recta de San Jorge."
+            </p>
+
+            <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+                <a href="#" class="group relative px-8 py-4 bg-[#e31e24] rounded-xl overflow-hidden transition-all hover:scale-105 active:scale-95">
+                    <span class="relative z-10 font-bold text-lg flex items-center gap-3">
+                        VER EL MENÚ <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+                    </span>
+                </a>
+                <a href="https://wa.me/3226386011" target="_blank" class="px-8 py-4 border-2 border-white/30 rounded-xl font-bold text-lg hover:bg-white hover:text-black transition-all">
+                    <i class="fab fa-whatsapp mr-2"></i> DOMICILIOS
+                </a>
+            </div>
+        </div>
+
+        <div class="absolute inset-0 opacity-20 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/asfalt-dark.png')]"></div>
+    </main>
+
+    <div class="absolute bottom-0 w-full bg-black/60 py-4 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-between items-center text-xs md:text-sm text-gray-400 font-bold uppercase tracking-widest">
+            <div class="flex items-center gap-4">
+                <span class="flex items-center gap-2"><i class="fas fa-clock text-[#e31e24]"></i> 5PM - 12AM</span>
+                <span class="hidden md:block">|</span>
+                <span class="flex items-center gap-2"><i class="fas fa-map-marker-alt text-[#e31e24]"></i> SAN JORGE, MANIZALES</span>
+            </div>
+            <div class="flex gap-6 mt-4 md:mt-0">
+                <a href="#" class="hover:text-white"><i class="fab fa-instagram"></i> @lafabrica_manizales</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

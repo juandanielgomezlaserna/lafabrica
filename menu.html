@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Funcional | La Fábrica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        .font-brand { font-family: 'Bebas Neue', cursive; }
+        .font-body { font-family: 'Montserrat', sans-serif; }
+        .product-card.hidden { display: none; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-[#0f0f0f] text-white font-body overflow-x-hidden">
+
+    <nav class="fixed w-full z-50 px-6 py-4 flex justify-between items-center bg-black/90 backdrop-blur-md border-b border-white/5">
+        <div class="flex items-center gap-2">
+            <div class="w-10 h-10 bg-[#e31e24] rounded-full flex items-center justify-center border-2 border-white/20">
+                <i class="fas fa-fire-alt text-white"></i>
+            </div>
+            <span class="font-brand text-2xl tracking-widest">LA FÁBRICA</span>
+        </div>
+        <button onclick="toggleCart()" class="relative bg-white text-black px-6 py-2 rounded-full font-bold text-xs uppercase hover:bg-[#e31e24] hover:text-white transition-all flex items-center gap-2">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span> Items
+        </button>
+    </nav>
+
+    <main class="pt-28 pb-20 px-6 max-w-7xl mx-auto">
+        <header class="text-center mb-10">
+            <h2 class="font-brand text-6xl md:text-7xl">NUESTRO <span class="text-[#e31e24]">MENÚ</span></h2>
+        </header>
+
+        <div class="flex gap-3 overflow-x-auto pb-6 mb-10 no-scrollbar justify-start md:justify-center">
+            <button onclick="filterMenu('todos')" class="filter-btn active bg-[#e31e24] px-6 py-3 rounded-xl font-bold whitespace-nowrap transition-all">Todos</button>
+            <button onclick="filterMenu('hamburguesa')" class="filter-btn bg-white/5 border border-white/10 px-6 py-3 rounded-xl font-bold whitespace-nowrap hover:bg-white/10 transition-all">Hamburguesas</button>
+            <button onclick="filterMenu('cono')" class="filter-btn bg-white/5 border border-white/10 px-6 py-3 rounded-xl font-bold whitespace-nowrap hover:bg-white/10 transition-all">Conos de Patacón</button>
+            <button onclick="filterMenu('bebida')" class="filter-btn bg-white/5 border border-white/10 px-6 py-3 rounded-xl font-bold whitespace-nowrap hover:bg-white/10 transition-all">Bebidas</button>
+        </div>
+
+        <div id="menu-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="product-card bg-[#1a1a1a] rounded-3xl overflow-hidden border border-white/5 group transition-all" data-category="hamburguesa">
+                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=500" class="h-56 w-full object-cover group-hover:scale-105 transition-transform">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-brand text-2xl">LA INDUSTRIAL</h3>
+                        <span class="text-[#e31e24] font-bold">$26.000</span>
+                    </div>
+                    <button onclick="addToCart('La Industrial', 26000)" class="w-full bg-white text-black font-bold py-3 rounded-xl hover:bg-[#e31e24] hover:text-white transition-all">
+                        AGREGAR AL PEDIDO
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card bg-[#1a1a1a] rounded-3xl overflow-hidden border border-white/5 group transition-all" data-category="cono">
+                <img src="https://images.hive.blog/0x0/https://files.peakd.com/file/peakd-hive/yiobri/23wMm2qaxGaG3cswRrmJXZgQngMp9brFmKWzuucutauJ6JX1Ry47J6CCdswLjvfXmRWNa.jpg" class="h-56 w-full object-cover group-hover:scale-105 transition-transform">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-brand text-2xl">CONO CRIOLLO</h3>
+                        <span class="text-[#e31e24] font-bold">$19.500</span>
+                    </div>
+                    <button onclick="addToCart('Cono Criollo', 19500)" class="w-full bg-white text-black font-bold py-3 rounded-xl hover:bg-[#e31e24] hover:text-white transition-all">
+                        AGREGAR AL PEDIDO
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card bg-[#1a1a1a] rounded-3xl overflow-hidden border border-white/5 group transition-all" data-category="bebida">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmk-feoqIBVue-wHU0RJyBPHKmyRyDuEimQw&s" class="h-56 w-full object-cover group-hover:scale-105 transition-transform">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-brand text-2xl">SODA FRUTAL</h3>
+                        <span class="text-[#e31e24] font-bold">$8.500</span>
+                    </div>
+                    <button onclick="addToCart('Soda Frutal', 8500)" class="w-full bg-white text-black font-bold py-3 rounded-xl hover:bg-[#e31e24] hover:text-white transition-all">
+                        AGREGAR AL PEDIDO
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <div id="cart-sidebar" class="fixed inset-y-0 right-0 w-full md:w-96 bg-[#121212] z-[60] transform translate-x-full transition-transform duration-300 border-l border-white/10 shadow-2xl">
+        <div class="p-6 h-full flex flex-col">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="font-brand text-4xl text-red-600">TU PEDIDO</h2>
+                <button onclick="toggleCart()" class="text-2xl hover:rotate-90 transition-transform">&times;</button>
+            </div>
+            
+            <div id="cart-items" class="flex-1 overflow-y-auto space-y-4">
+                <p class="text-gray-500 text-center py-10 italic">El carrito está vacío...</p>
+            </div>
+
+            <div class="border-t border-white/10 pt-6 mt-6">
+                <div class="flex justify-between text-xl font-bold mb-6">
+                    <span>TOTAL:</span>
+                    <span id="cart-total" class="text-red-500">$0</span>
+                </div>
+                <button onclick="checkout()" class="w-full bg-[#e31e24] py-4 rounded-2xl font-bold text-lg hover:scale-105 transition-transform">
+                    FINALIZAR POR WHATSAPP
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="overlay" onclick="toggleCart()" class="fixed inset-0 bg-black/60 z-50 hidden backdrop-blur-sm"></div>
+
+    <script>
+        let cart = [];
+        let total = 0;
+
+        function filterMenu(category) {
+            // Actualizar botones
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('bg-[#e31e24]', 'active');
+                btn.classList.add('bg-white/5');
+            });
+            event.currentTarget.classList.add('bg-[#e31e24]', 'active');
+
+            // Filtrar cards
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach(card => {
+                if (category === 'todos' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function addToCart(name, price) {
+            cart.push({ name, price });
+            updateCartUI();
+            
+            // Animación pequeña al botón del header
+            const btn = document.querySelector('#cart-count').parentElement;
+            btn.classList.add('scale-110', 'bg-red-600', 'text-white');
+            setTimeout(() => btn.classList.remove('scale-110', 'bg-red-600', 'text-white'), 200);
+        }
+
+        function updateCartUI() {
+            const container = document.querySelector('#cart-items');
+            const countLabel = document.querySelector('#cart-count');
+            const totalLabel = document.querySelector('#cart-total');
+            
+            countLabel.innerText = cart.length;
+            
+            if (cart.length === 0) {
+                container.innerHTML = '<p class="text-gray-500 text-center py-10 italic">El carrito está vacío...</p>';
+                totalLabel.innerText = "$0";
+                return;
+            }
+
+            container.innerHTML = cart.map((item, index) => `
+                <div class="flex justify-between items-center bg-white/5 p-4 rounded-xl border border-white/5">
+                    <div>
+                        <p class="font-bold uppercase text-sm">${item.name}</p>
+                        <p class="text-red-500 text-xs">$${item.price.toLocaleString()}</p>
+                    </div>
+                    <button onclick="removeFromCart(${index})" class="text-gray-500 hover:text-white">&times;</button>
+                </div>
+            `).join('');
+
+            const sum = cart.reduce((acc, item) => acc + item.price, 0);
+            totalLabel.innerText = `$${sum.toLocaleString()}`;
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function toggleCart() {
+            const sidebar = document.querySelector('#cart-sidebar');
+            const overlay = document.querySelector('#overlay');
+            sidebar.classList.toggle('translate-x-full');
+            overlay.classList.toggle('hidden');
+        }
+
+        function checkout() {
+            if(cart.length === 0) return alert("¡Agrega algo antes de pedir!");
+            const message = cart.map(i => `- ${i.name}`).join('%0A');
+            const total = cart.reduce((acc, item) => acc + item.price, 0);
+            window.open(`https://wa.me/3137019506?text=Hola! Quiero pedir:%0A${message}%0A%0ATotal: $${total.toLocaleString()}`, '_blank');
+        }
+    </script>
+
+</body>
+</html>
