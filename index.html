@@ -22,24 +22,45 @@
 </head>
 <body class="bg-[#0f0f0f] text-white font-body min-h-screen flex flex-col">
 
-    <nav class="fixed w-full z-50 px-6 py-4 flex justify-between items-center bg-black/60 backdrop-blur-md border-b border-white/5">
-        <div class="flex items-center gap-2">
-            <div class="w-10 h-10 bg-[#e31e24] rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(227,30,36,0.4)]">
-                <i class="fas fa-fire-alt text-white"></i>
+    <header class="fixed w-full z-50 transition-all">
+        <nav class="px-6 py-4 flex justify-between items-center bg-black/80 backdrop-blur-md border-b border-white/5">
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-[#e31e24] rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(227,30,36,0.4)]">
+                    <i class="fas fa-fire-alt text-white"></i>
+                </div>
+                <span class="font-brand text-2xl tracking-widest">LA FÁBRICA</span>
             </div>
-            <span class="font-brand text-2xl tracking-widest">LA FÁBRICA</span>
-        </div>
-        <div class="hidden md:flex gap-8 text-sm font-bold tracking-tighter uppercase">
-            <a href="#" class="text-[#e31e24]">Inicio</a>
-            <a href="/menu.html" class="hover:text-[#e31e24] transition-colors">Menú</a>
-            <a href="#" class="hover:text-[#e31e24] transition-colors">Ubicación</a>
-        </div>
-        <button class="bg-white text-black px-5 py-2 rounded-full font-bold text-xs uppercase hover:bg-[#e31e24] hover:text-white transition-all transform hover:scale-105 active:scale-95">
-            Pide Ahora
-        </button>
-    </nav>
+            
+            <div class="hidden md:flex gap-8 text-sm font-bold tracking-tighter uppercase">
+                <a href="#" class="text-[#e31e24]">Inicio</a>
+                <a href="/menu.html" class="hover:text-[#e31e24] transition-colors">Menú</a>
+                <a href="#" class="hover:text-[#e31e24] transition-colors">Ubicación</a>
+            </div>
 
-    <main class="relative flex-grow flex items-center justify-center overflow-hidden pt-20">
+            <button class="bg-white text-black px-4 py-2 md:px-5 md:py-2 rounded-full font-bold text-[10px] md:text-xs uppercase hover:bg-[#e31e24] hover:text-white transition-all transform active:scale-95">
+                Pide Ahora
+            </button>
+        </nav>
+
+        <div class="md:hidden flex justify-around items-center bg-[#1a1a1a]/90 backdrop-blur-md border-b border-white/10 py-3 text-[10px] font-bold uppercase tracking-[0.2em]">
+            <a href="#" class="text-[#e31e24] flex flex-col items-center gap-1">
+                <i class="fas fa-home text-base"></i>
+                Inicio
+            </a>
+            <a href="/menu.html" class="text-gray-400 hover:text-white flex flex-col items-center gap-1 transition-colors">
+                <i class="fas fa-utensils text-base"></i>
+                Menú
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white flex flex-col items-center gap-1 transition-colors">
+                <i class="fas fa-map-marker-alt text-base"></i>
+                Ubicación
+            </a>
+        </div>
+    </header>
+
+    <div class="h-[110px] md:h-[72px]"></div>
+
+    <main class="relative flex-grow flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0">
             <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/80 to-[#0f0f0f] z-10"></div>
             <img src="https://images.unsplash.com/photo-1550950158-d0d960dff51b?auto=format&fit=crop&q=80&w=1600" 
@@ -53,8 +74,8 @@
             <i class="fas fa-hamburger text-[15rem]"></i>
         </div>
 
-        <div class="relative z-20 text-center px-6 max-w-5xl py-20">
-            <span class="inline-block bg-[#e31e24] text-white px-6 py-1 rounded-sm font-bold text-sm tracking-[0.4em] mb-8 animate-pulse shadow-lg">
+        <div class="relative z-20 text-center px-6 max-w-5xl py-12 md:py-20">
+            <span class="inline-block bg-[#e31e24] text-white px-6 py-1 rounded-sm font-bold text-xs md:text-sm tracking-[0.4em] mb-6 md:mb-8 animate-pulse shadow-lg">
                 MANIZALES
             </span>
 
@@ -62,17 +83,17 @@
                 100% <span class="text-[#e31e24]">ARTESANAL</span>
             </h1>
 
-            <p class="text-gray-300 text-lg md:text-2xl font-light max-w-2xl mx-auto mb-12 leading-relaxed italic">
+            <p class="text-gray-300 text-base md:text-2xl font-light max-w-2xl mx-auto mb-10 md:mb-12 leading-relaxed italic">
                 "Cocinamos para tus eventos. Hamburguesas, conos de patacón, arepas y mucho más en la Recta de San Jorge."
             </p>
 
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="#" class="w-full sm:w-auto group relative px-10 py-5 bg-[#e31e24] rounded-2xl overflow-hidden transition-all hover:shadow-[0_0_30px_rgba(227,30,36,0.5)] hover:-translate-y-1">
-                    <span class="relative z-10 font-bold text-xl flex items-center justify-center gap-3">
+                <a href="#" class="w-full sm:w-auto group relative px-10 py-4 md:py-5 bg-[#e31e24] rounded-2xl overflow-hidden transition-all hover:shadow-[0_0_30px_rgba(227,30,36,0.5)] hover:-translate-y-1">
+                    <span class="relative z-10 font-bold text-lg md:text-xl flex items-center justify-center gap-3">
                         VER EL MENÚ <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
                     </span>
                 </a>
-                <a href="https://wa.me/3226386011" target="_blank" class="w-full sm:w-auto px-10 py-5 border-2 border-white/20 rounded-2xl font-bold text-xl hover:bg-white hover:text-black transition-all flex items-center justify-center gap-3 backdrop-blur-sm">
+                <a href="https://wa.me/3226386011" target="_blank" class="w-full sm:w-auto px-10 py-4 md:py-5 border-2 border-white/20 rounded-2xl font-bold text-lg md:text-xl hover:bg-white hover:text-black transition-all flex items-center justify-center gap-3 backdrop-blur-sm">
                     <i class="fab fa-whatsapp text-green-500 text-2xl"></i> DOMICILIOS
                 </a>
             </div>
@@ -82,8 +103,8 @@
     </main>
 
     <footer class="w-full bg-black/80 backdrop-blur-xl border-t border-white/10 py-8 mt-auto">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-xs md:text-sm text-gray-400 font-bold uppercase tracking-[0.2em]">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex flex-col md:flex-row items-center gap-6 md:gap-8 text-[10px] md:text-sm text-gray-400 font-bold uppercase tracking-[0.2em]">
                 <div class="flex items-center gap-3">
                     <i class="fas fa-clock text-[#e31e24] text-lg"></i>
                     <span>5PM - 12AM</span>

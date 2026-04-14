@@ -16,23 +16,56 @@
 </head>
 <body class="bg-[#0f0f0f] text-white font-body overflow-x-hidden">
 
-    <nav class="fixed w-full z-50 px-6 py-4 flex justify-between items-center bg-black/90 backdrop-blur-md border-b border-white/5">
-        <div class="flex items-center gap-2">
-            <div class="w-10 h-10 bg-[#e31e24] rounded-full flex items-center justify-center border-2 border-white/20">
-                <i class="fas fa-fire-alt text-white"></i>
+    <header class="fixed w-full z-50 transition-all">
+        <nav class="px-6 py-4 flex justify-between items-center bg-black/80 backdrop-blur-md border-b border-white/5">
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-[#e31e24] rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(227,30,36,0.4)]">
+                    <i class="fas fa-fire-alt text-white"></i>
+                </div>
+                <span class="font-brand text-2xl tracking-widest">LA FÁBRICA</span>
             </div>
-            <span class="font-brand text-2xl tracking-widest">LA FÁBRICA</span>
+            
+            <div class="hidden md:flex gap-8 text-sm font-bold tracking-tighter uppercase">
+                <a href="#" class="hover:text-[#e31e24] transition-colors">Inicio</a>
+                <a href="/menu.html" class="text-[#e31e24]">Menú</a>
+                <a href="#" class="hover:text-[#e31e24] transition-colors">Ubicación</a>
+            </div>
+
+            <button class="bg-white text-black px-4 py-2 md:px-5 md:py-2 rounded-full font-bold text-[10px] md:text-xs uppercase hover:bg-[#e31e24] hover:text-white transition-all transform active:scale-95">
+                Pide Ahora
+            </button>
+        </nav>
+
+        <div class="md:hidden flex justify-around items-center bg-[#1a1a1a]/90 backdrop-blur-md border-b border-white/10 py-3 text-[10px] font-bold uppercase tracking-[0.2em]">
+            <a href="#" class="text-[#e31e24] flex flex-col items-center gap-1">
+                <i class="fas fa-home text-base"></i>
+                Inicio
+            </a>
+            <a href="/menu.html" class="text-gray-400 hover:text-white flex flex-col items-center gap-1 transition-colors">
+                <i class="fas fa-utensils text-base"></i>
+                Menú
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white flex flex-col items-center gap-1 transition-colors">
+                <i class="fas fa-map-marker-alt text-base"></i>
+                Ubicación
+            </a>
         </div>
-        <div class="hidden md:flex gap-8 text-sm font-bold tracking-tighter uppercase">
-            <a href="index.html" class="hover:text-[#e31e24] transition-colors">Inicio</a>
-            <a href="menu.html" class="text-[#e31e24]">Menú</a>
-            <a href="#" class="hover:text-[#e31e24] transition-colors">Ubicación</a>
+    </header>
+
+    <div class="md:hidden flex justify-around items-center bg-[#1a1a1a]/90 backdrop-blur-md border-b border-white/10 py-3 text-[10px] font-bold uppercase tracking-[0.2em]">
+            <a href="#" class="text-[#e31e24] flex flex-col items-center gap-1">
+                <i class="fas fa-home text-base"></i>
+                Inicio
+            </a>
+            <a href="/menu.html" class="text-gray-400 hover:text-white flex flex-col items-center gap-1 transition-colors">
+                <i class="fas fa-utensils text-base"></i>
+                Menú
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white flex flex-col items-center gap-1 transition-colors">
+                <i class="fas fa-map-marker-alt text-base"></i>
+                Ubicación
+            </a>
         </div>
-        <button onclick="toggleCart()" class="relative bg-white text-black px-6 py-2 rounded-full font-bold text-xs uppercase hover:bg-[#e31e24] hover:text-white transition-all flex items-center gap-2">
-            <i class="fas fa-shopping-cart"></i>
-            <span id="cart-count">0</span> Items
-        </button>
-    </nav>
 
     <main class="pt-28 pb-20 px-6 max-w-7xl mx-auto">
         <header class="text-center mb-10">
